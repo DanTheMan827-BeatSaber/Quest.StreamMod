@@ -26,6 +26,7 @@ jobs:
         uses: lukka/run-vcpkg@v11
         with:
           vcpkgGitCommitId: master
+          runVcpkgInstall: true
 
       - uses: seanmiddleditch/gha-setup-ninja@v3
 
