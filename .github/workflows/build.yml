@@ -22,11 +22,10 @@ jobs:
           submodules: true
           lfs: true
 
-      - name: Setup anew (or from cache) vcpkg (and does not build any package)
+      - name: Setup vcpkg
         uses: lukka/run-vcpkg@v11
         with:
           vcpkgGitCommitId: master
-          runVcpkgInstall: true
 
       - uses: seanmiddleditch/gha-setup-ninja@v3
 
