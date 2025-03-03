@@ -22,6 +22,12 @@ jobs:
           submodules: true
           lfs: true
 
+      - name: Setup anew (or from cache) vcpkg (and does not build any package)
+        uses: lukka/run-vcpkg@v11
+        with:
+          vcpkgGitCommitId: master
+          runVcpkgInstall: true
+
       - uses: seanmiddleditch/gha-setup-ninja@v3
 
       - name: Create ndkpath.txt
@@ -49,6 +55,7 @@ jobs:
       - name: Build & create qmod
         run: |
           cd ${GITHUB_WORKSPACE}
+          qpm s proto
           qpm s qmod
 
       - name: Get Library Name
